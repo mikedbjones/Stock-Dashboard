@@ -1,4 +1,5 @@
 # Stock-Dashboard
+A dashboard built using [Plotly and Dash](https://plotly.com/dash/) showing closing stock prices for tickers across a date range.
 ## Install
 `pip install -r requirements.txt`
 
