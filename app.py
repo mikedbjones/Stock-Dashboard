@@ -1,6 +1,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_auth
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output, State
 import pandas_datareader as pdr
@@ -9,8 +10,15 @@ import os
 from datetime import datetime
 
 tiingo_key = os.environ['TIINGO_KEY']
+user = os.environ['USER']
+password = os.environ['PASSWORD']
+
+USERNAME_PASSWORD_PAIRS = [
+    [user, password]
+]
 
 app = dash.Dash()
+auth = dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
 server = app.server
 
 available_tickers = pd.read_csv('data/NASDAQcompanylist.csv').set_index('Symbol')['Name']
