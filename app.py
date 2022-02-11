@@ -11,6 +11,7 @@ from datetime import datetime
 tiingo_key = os.environ['TIINGO_KEY']
 
 app = dash.Dash()
+server = app.server
 
 available_tickers = pd.read_csv('data/NASDAQcompanylist.csv').set_index('Symbol')['Name']
 
