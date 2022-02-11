@@ -5,3 +5,4 @@ dash-renderer==0.12.1
 pandas==0.22.0
 pandas-datareader==0.6.0
 plotly==2.5.1
+gunicorn==20.1.0
